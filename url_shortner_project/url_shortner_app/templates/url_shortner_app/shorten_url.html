@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>URL Shortener</title>
-</head>
-<body>
-    <h1>URL Shortener</h1>
-    <form method="post">
+{% extends "url_shortner_app/base.html"%}
+{% block content %}
+<div class="mt-16 mx-auto flex justify-center">
+    <form method="post" class="flex-col">
         {% csrf_token %}
-        <label for="original_url">Enter URL:</label>
-        <input type="url" name="original_url" id="original_url">
-        <button type="submit">Shorten</button>
+        <label class="text-lg font-semibold" for="original_url">Enter URL:</label>
+        <input type="url" class="mt-2 w-full rounded-md border-0 py-1.5 px-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" name="original_url" id="original_url">
+        <span class="flex sm:ml-3 justify-end">
+            <button type="submit" class="mt-4 inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                <svg class="-ml-0.5 mr-1.5 h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                  </svg>
+              Shorten
+            </button>
+          </span>
     </form>
-</body>
-</html>
+</div>
+{% endblock content %}

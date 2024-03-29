@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Shortened URL</title>
-</head>
-<body>
-    <h1>Your Shortened URL</h1>
-    <p>Here is your shortened URL:</p>
-    <a href="{{ short_url }}" target="_blank">{{ short_url }}</a>
-</body>
-</html>
+{% extends "url_shortner_app/base.html"%}
+{% block content %}
+<div class="mt-16 mx-auto flex justify-center items-center">
+    <div class="flex-col items-center">
+    <p class="text-lg font-semibold" >Here is your shortened URL:</p>
+    <a id="myInput" class="text-indigo-500 underline" href="{{ short_url }}" target="_blank">{{ short_url }}</a>
+</div>
+</div>
+ 
+{% endblock content %}
